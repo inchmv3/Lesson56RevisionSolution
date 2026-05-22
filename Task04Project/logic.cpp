@@ -9,9 +9,13 @@ int recursion(int number) {
 	return 1;
 	}
 
-	return recursion(number )
+	return (number * number * number) + recursion(number - 1);
 
 }
 int sum_of_cubes(int number) {
+	if (number <= 0) {
+		return -1;
+	}
 
+	return recursion(number);
 }
