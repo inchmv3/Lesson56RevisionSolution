@@ -4,17 +4,28 @@
 // Необходимо спроектировать и реализовать программу, 
 // которая вычисляет сумму чётных чисел от 1 до N.
 #include "logic.h"
+
 int recursion(int number) {
-	if (number <= 0) {
+	if (number == 0) {
+		return 0;
+	}
+	
+	return recursion(number - 2) + number;
+}
+
+int sum(int number) {
+	if (number % 2 != 0) {
+		number--;
+	}
+
+	if (number < 0) {
 		return -1;
 	}
-	if (number % 2 == 0) {
-		return number + recursion(number - 1);
-	}
 
-	return recursion(number - 1);
-}
-int sum(int number) {
+	// 8--> 8 + 6 + 4 + 2 0
+	// 7 -- 6
+	
 
 	return recursion(number);
+	
 }
